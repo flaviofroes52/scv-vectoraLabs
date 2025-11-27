@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/styles/styles.css" />
+    <title>Painel de Cadastros</title>
+  </head>
+  <body class="painelcads">
+    <h1>Cadastros</h1>
+
+    <div class="cadmosaico">
+      <!-- Motoristas -->
+      <button class="botao motoristas" id="btMotoristas">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+      10-4.48 10-10S17.52 2 12 2zm0 4c1.66 0 3 1.34 3 3
+      s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14c-2.5 0-4.71-1.28-6-3.22
+      .03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08C16.71 18.72 14.5 20 12 20z"
+          />
+        </svg>
+        Motoristas
+      </button>
+
+      <!-- Veículos -->
+      <button class="botao veiculos" id="btVeiculos">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path
+            d="M3 3h13v11h-13v-11zm14 4h4l3 3v7h-2
+      c0 1.1-.9 2-2 2s-2-.9-2-2h-8
+      c0 1.1-.9 2-2 2s-2-.9-2-2h-2v-2h17v-5h-4v-3z"
+          />
+        </svg>
+        Veículos
+      </button>
+
+      <!-- Usuários -->
+      <button class="botao usuarios" id="btUsuarios">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path
+            d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5
+      -5 2.24-5 5 2.24 5 5 5zm0 2
+      c-3.33 0-10 1.67-10 5v3h20v-3
+      c0-3.33-6.67-5-10-5z"
+          />
+        </svg>
+        Usuários
+      </button>
+
+      <!-- Sair -->
+      <button class="botao sair" id="btSair">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path
+            d="M10 17l5-5-5-5v10zm-6-12h8v-2h-8
+      c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2
+      2h8v-2h-8v-14z"
+          />
+        </svg>
+        Sair
+      </button>
+    </div>
+    <!-- inicio cadastro de motoristas -->
+    <section class="card" id="cadMotoristas">
+      <h1>Cadastro de Motoristas</h1>
+
+      <form id="formMotorista" autocomplete="off">
+        <div class="form-grid">
+          <!-- Coluna esquerda: campos -->
+          <div class="col-left">
+            <input
+              type="text"
+              class="inp"
+              id="nome"
+              name="nome"
+              placeholder="Nome"
+              required
+            />
+
+            <input
+              type="text"
+              class="inp"
+              id="cpf"
+              name="cpf"
+              placeholder="CPF"
+              required
+            />
+
+            <input
+              type="text"
+              class="inp"
+              id="telefone"
+              name="telefone"
+              placeholder="Telefone"
+              required
+            />
+
+            <input
+              type="text"
+              class="inp"
+              id="habilitacao"
+              name="habilitacao"
+              placeholder="Nº Habilitação (CNH)"
+              required
+            />
+
+            <!-- ⭐ CAMPO NOVO: Categoria da CNH -->
+            <input
+              type="text"
+              class="inp"
+              id="categoria"
+              name="categoria"
+              placeholder="Categoria da CNH (A, B, C, D, E)"
+              required
+            />
+          </div>
+
+          <!-- Coluna direita: foto + botão -->
+          <div class="col-right">
+            <div class="avatar">
+              <img
+                id="previewFoto"
+                src="/public/images/placeholder-user.png"
+                alt="Preview da foto do motorista"
+              />
+            </div>
+
+            <!-- Input real de arquivo (oculto) -->
+            <input
+              type="file"
+              id="inputFoto"
+              name="imagemMotorista"
+              accept="image/*"
+            />
+          </div>
+        </div>
+
+        <!-- Select de Motoristas -->
+        <div class="row">
+          <div class="select-wrap">
+            <select
+              class="sel"
+              id="selMotoristas"
+              name="motoristaSelecionado"
+              aria-label="Selecione um motorista"
+            >
+              <option selected>
+                Selecione um motorista (para alterar/excluir)
+              </option>
+              <option>—</option>
+            </select>
+            <span class="sel-caret" aria-hidden="true">▾</span>
+          </div>
+        </div>
+
+        <!-- Informações adicionais -->
+        <div class="row">
+          <textarea
+            class="inp textarea"
+            id="infoAdicionais"
+            name="infoAdicionais"
+            rows="5"
+            placeholder="Informações Adicionais"
+          ></textarea>
+        </div>
+
+        <!-- Ações -->
+        <div class="actions">
+          <!-- Incluir -->
+          <button
+            class="fab fab-blue"
+            type="button"
+            id="btnIncluir"
+            title="Incluir"
+          >
+            <svg viewBox="0 0 24 24">
+              <path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z" />
+            </svg>
+          </button>
+
+          <!-- Alterar -->
+          <button
+            class="fab fab-yellow"
+            type="button"
+            id="btnAlterar"
+            title="Alterar"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1.003 1.003 0 0 0 0-1.42l-2.34-2.34a1.003 1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.82z"
+              />
+            </svg>
+          </button>
+
+          <!-- Excluir -->
+          <button
+            class="fab fab-red"
+            type="button"
+            id="btnExcluir"
+            title="Excluir"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 3h6l1 2h4v2H4V5h4l1-2zm1 6h2v9h-2V9zm4 0h2v9h-2V9zM7 9h2v9H7V9z"
+              />
+            </svg>
+          </button>
+
+          <!-- Sair -->
+          <button class="fab fab-gray" type="button" id="btnSair" title="Sair">
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="5"
+                y="3"
+                width="9"
+                height="18"
+                rx="1.5"
+                ry="1.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle cx="11" cy="12" r="1" />
+              <path
+                d="M13 12h7"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <path
+                d="M18 8l4 4-4 4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </section>
+    <!-- final cadastro motoristas -->
+    <!-- ⭐ CADASTRO DE VEÍCULOS ⭐ -->
+    <section id="cadVeiculos" class="cadastro-veiculos">
+      <h2 class="titulo-cadastro">Cadastro de Veículos</h2>
+      <div class="foto-wrapper">
+        <div class="foto-quadro">
+          <img
+            id="previewVeiculo"
+            src="/public/images/placeholder-veiculo.png"
+            alt="Preview do veículo"
+          />
+        </div>
+        <input
+          type="file"
+          id="fotoVeiculo"
+          accept="image/*"
+          class="input-file"
+        />
+      </div>
+      <div class="form-veiculos">
+        <input
+          type="text"
+          id="veiculo"
+          placeholder="Tipo de veículo (ex: Caminhão)"
+        />
+        <!-- ⭐ APARECE SÓ PARA CAMINHÃO OU CARRETA ⭐ -->
+        <div id="grupoCargaPerigosa" style="display: none; margin-top: 5px">
+          <label style="display: flex; gap: 8px; align-items: center">
+            <input type="checkbox" id="cargaPerigosa" />
+            Veículo transporta carga perigosa
+          </label>
+        </div>
+        <input type="text" id="marca" placeholder="Marca" />
+        <input type="number" id="ano" placeholder="Ano" />
+        <input type="text" id="cor" placeholder="Cor" />
+        <input type="text" id="placa" placeholder="Placa (se tiver)" />
+        <input
+          type="text"
+          id="patrimonio"
+          placeholder="Número de patrimônio (tratores, retro, etc.)"
+        />
+        <select id="selectVeiculos">
+          <option value="">Selecione um veículo...</option>
+        </select>
+        <div class="botoes-veiculos">
+          <button class="btn-acao btn-azul" id="btIncluirVeiculo">
+            <svg width="26" height="26" fill="white" viewBox="0 0 24 24">
+              <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z" />
+            </svg>
+          </button>
+          <button class="btn-acao btn-amarelo" id="btAlterarVeiculo">
+            <svg width="26" height="26" fill="#000" viewBox="0 0 24 24">
+              <path
+                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 
+             7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a1.003 
+             1.003 0 0 0-1.42 0l-1.83 1.83 3.75 3.75 1.84-1.83z"
+              />
+            </svg>
+          </button>
+          <button class="btn-acao btn-vermelho" id="btExcluirVeiculo">
+            <svg width="26" height="26" fill="white" viewBox="0 0 24 24">
+              <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1z" />
+            </svg>
+          </button>
+          <button class="btn-acao btn-cinza" id="btSairVeiculos">
+            <svg width="28" height="28" fill="white" viewBox="0 0 24 24">
+              <path
+                d="M10 17l5-5-5-5v10zm-6-12h8v-2h-8c-1.1 
+               0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2h-8v-14z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ================================ -->
+    <!-- 🔒 MODAL: Cadastro de Usuários  -->
+    <!-- ================================ -->
+    <section class="modal-usuarios-overlay" id="modalUsuarios">
+      <div class="modal-usuarios-card">
+        <!-- Cabeçalho -->
+        <header class="modal-usuarios-header">
+          <h2>Cadastro de Usuários</h2>
+          <button
+            class="icon-btn icon-neutral"
+            id="btnFecharUsuarios"
+            aria-label="Fechar"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z"
+              />
+            </svg>
+          </button>
+        </header>
+
+        <!-- Formulário -->
+        <form id="formUsuarios" class="modal-usuarios-body">
+          <!-- Cadastro (login + senha) -->
+         
+          <input
+            type="email"
+            id="login"
+            name="login"
+            placeholder="Login (e-mail)"
+            required
+          />
+
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Senha"
+            required
+          />
+
+          <!-- Botão adicionar -->
+          <div class="modal-usuarios-actions">
+            <button
+              type="submit"
+              class="icon-btn icon-primary"
+              id="btnIncluirUsuario"
+              title="Cadastrar usuário"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 11H13V5a1 1 0 0 0-2 0v6H5a1 1 0 0 0 0 2h6v6a1 1 0 0 0 2 0v-6h6a1 1 0 0 0 0-2z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <hr />
+
+          <!-- Alterar Senha -->
+          <h3 class="subtitulo-modal">Alterar senha</h3>
+
+          <select id="selectUsuariosAlterar">
+            <option value="">Selecione um usuário para alterar a senha</option>
+          </select>
+
+          <input type="password" id="novaSenha" placeholder="Nova senha" />
+
+          <div class="modal-usuarios-actions">
+            <button
+              type="button"
+              class="icon-btn icon-warning"
+              id="btnAlterarSenha"
+              title="Alterar senha"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M3 17.25V21h3.75l11-11.03-3.75-3.75L3 17.25zM20.71 
+              7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 
+              0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                />
+              </svg>
+            </button>
+          </div>
+          <hr />
+          <!-- Excluir usuário -->
+          <h3 class="subtitulo-modal">Excluir usuário</h3>
+          <select id="selectUsuarios">
+            <option value="">Selecione um usuário para excluir</option>
+          </select>
+          <div class="modal-usuarios-actions">
+            <button
+              type="button"
+              class="icon-btn icon-danger"
+              id="btnExcluirUsuario"
+              title="Excluir usuário"
+            >
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M9 3a1 1 0 0 0-1 1v1H5a1 1 0 0 0 0 2h1v11a2 2 0 0 0 
+                 2 2h8a2 2 0 0 0 2-2V7h1a1 1 0 0 0 0-2h-3V4a1 1 0 0 
+                 0-1-1H9zm1 3h6v11H8V6h2zm1 2a1 1 0 0 0-1 
+                 1v7a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1zm4 0a1 1 0 0 0-1 
+                 1v7a1 1 0 1 0 2 0V9a1 1 0 0 0-1-1z"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script type="module" src="/public/scripts/scripts.js"></script>
+
+  </body>
+</html>

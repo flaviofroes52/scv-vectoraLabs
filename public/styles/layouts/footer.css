@@ -1,0 +1,134 @@
+/* ============================================================
+   🟦 FOOTER VETORALABS — VISUAL PROFISSIONAL AJUSTADO
+   Legibilidade aprimorada • Logo maior • Layout corporativo
+============================================================ */
+
+#footerSistema {
+  width: 100%;
+  background: linear-gradient(90deg, #001a99, #0033dd);
+  padding: 12px 0;  /* 🔥 altura levemente ampliada pra ficar mais elegante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid rgba(255, 255, 255, 0.15);
+  margin-top: 40px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.18);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* ============================
+   Conteúdo interno
+=============================== */
+.footerConteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;  /* 🔼 espaçamento maior pra respiração e leitura */
+  text-align: center;
+  color: #ffffff;
+}
+
+/* ============================
+   Logo VetoraLabs
+=============================== */
+.logoFooter {
+  height: 110px;   /* 🔥 TAMANHO PROFISSIONAL */
+  object-fit: contain;
+  opacity: 0.97;
+  transition: 0.25s ease-in-out;
+}
+
+.logoFooter:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* ============================
+   Slogan
+=============================== */
+.footerSlogan {
+  font-size: 1.08rem;  /* 🔼 mais legível */
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* ============================
+   Copyright
+=============================== */
+.footerCopy {
+  font-size: 1.18rem;  /* 🔼 bem mais claro e profissional */
+  opacity: 0.92;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+/* ============================
+   Responsividade
+=============================== */
+@media (max-width: 600px) {
+  #footerSistema {
+    padding: 10px 0;
+  }
+
+  .logoFooter {
+    height: 85px; /* 🔥 mantém legível sem esmagar a tela */
+  }
+
+  .footerSlogan {
+    font-size: 1rem;
+  }
+
+  .footerCopy {
+    font-size: 1.05rem;
+  }
+}
+
+/* ============================================================
+   📱 EXTRA — Responsividade Máxima (TELAS MUITO PEQUENAS)
+============================================================ */
+@media (max-width: 420px) {
+
+  #footerSistema {
+    padding: 8px 0;
+  }
+
+  .logoFooter {
+    height: 70px; /* 🔥 ajuste perfeito para celulares compactos */
+  }
+
+  .footerSlogan {
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+  }
+
+  .footerCopy {
+    font-size: 0.95rem;
+  }
+}
+
+/* ============================================================
+   📱 EXTRA — MICROTELAS (≤ 360px)
+============================================================ */
+@media (max-width: 360px) {
+
+  #footerSistema {
+    padding: 6px 0;
+  }
+
+  .logoFooter {
+    height: 60px; 
+  }
+
+  .footerSlogan {
+    font-size: 0.88rem;
+  }
+
+  .footerCopy {
+    font-size: 0.88rem;
+  }
+}

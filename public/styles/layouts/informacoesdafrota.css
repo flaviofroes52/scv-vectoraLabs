@@ -1,0 +1,188 @@
+/* =========================================================
+   📦 CARD — Informações da Frota (fixo e suave)
+========================================================= */
+#infoFrotaCard {
+  width: 100%;
+  background: #ffffff;
+  padding: 30px 36px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  height: auto;
+}
+
+/* 🔵 SEU TÍTULO – MANTIDO DO JEITO EXATO QUE VOCÊ FEZ */
+#infoFrotaCard h2{
+  color:blue;
+  font-size:2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   🧱 GRID — 5 colunas, 3 linhas fixas
+========================================================= */
+#infoFrotaLista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: column;
+  gap: 25px;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   🏷️ COLUNAS
+========================================================= */
+.colunaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.labelInfo {
+  font-weight: bold;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   📋 LISTA DE VALORES — 3 linhas fixas
+========================================================= */
+.valoresInfo {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   🚗 LINHAS
+========================================================= */
+.valoresInfo li {
+  background: #eef2ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #222;
+
+  display: block;
+  align-items: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  min-height: 38px;
+  line-height: 38px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  transition: 0.15s ease;
+}
+
+.valoresInfo li:hover {
+  background: #dfe6ff;
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   ✈️ EFEITO PAINEL DE AEROPORTO — SUAVE, SEM SUMIR
+========================================================= */
+.valoresInfo li.split-flip {
+  display: block;
+  transform-style: preserve-3d;
+  perspective: 700px;
+}
+
+.split-flip.flip {
+  animation: flipSoft 0.45s ease;
+}
+
+@keyframes flipSoft {
+  0%   { transform: rotateX(0deg); }
+  40%  { transform: rotateX(-90deg); }
+  60%  { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+/* =========================================================
+   📱 RESPONSIVIDADE — TOTALMENTE PROFISSIONAL
+========================================================= */
+@media (max-width: 1100px) {
+  #infoFrotaLista {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  #infoFrotaLista {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  #infoFrotaCard h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #infoFrotaCard {
+    padding: 22px;
+  }
+
+  #infoFrotaLista {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 20px;
+  }
+
+  .valoresInfo li {
+    font-size: 0.85rem;
+    min-height: 34px;
+    line-height: 34px;
+  }
+}
+
+/* =========================================================
+   📱 SUPER RESPONSIVIDADE — CELULAR MUITO PEQUENO
+========================================================= */
+@media (max-width: 480px) {
+  #infoFrotaCard {
+    padding: 18px;
+  }
+
+  #infoFrotaCard h2 {
+    font-size: 1.45rem;
+  }
+
+  .labelInfo {
+    font-size: 0.85rem;
+  }
+
+  .valoresInfo li {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  #infoFrotaCard h2 {
+    font-size: 1.2rem;
+  }
+
+  .valoresInfo li {
+    font-size: 0.75rem;
+  }
+}

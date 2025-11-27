@@ -1,0 +1,94 @@
+/* =========================================================
+   🟦 SAUDAÇÃO — LETREIRO NO TOPO (SEM FUNDO)
+   ========================================================= */
+
+#usuarioArea {
+    width: 100%;
+    position: relative;
+
+    /* deixa o texto lá no topo, quase encostando */
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+
+    /* sem fundo, sem borda */
+    background: transparent !important;
+    border: none !important;
+}
+
+/* texto principal: "Bom dia" */
+#usuarioSaudacao {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #003cff;
+    letter-spacing: 0.5px;
+}
+
+/* email do usuário */
+#usuarioNome {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.85;
+    color: #222;
+}
+
+/* Classe usada para esconder quando abrir alguma função */
+.usuarioAreaOculta {
+    display: none !important;
+}
+
+/* =========================================================
+   📱 RESPONSIVIDADE — TOTALMENTE CIRÚRGICA
+   ========================================================= */
+
+@media (max-width: 700px) {
+    #usuarioSaudacao {
+        font-size: 1.5rem;
+    }
+    #usuarioNome {
+        font-size: 0.9rem;
+    }
+    #usuarioArea {
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    #usuarioSaudacao {
+        font-size: 1.35rem;
+    }
+    #usuarioNome {
+        font-size: 0.85rem;
+    }
+    #usuarioArea {
+        gap: 2px;
+    }
+}
+
+@media (max-width: 360px) {
+    #usuarioSaudacao {
+        font-size: 1.2rem;
+        letter-spacing: 0.3px;
+    }
+    #usuarioNome {
+        font-size: 0.78rem;
+    }
+    #usuarioArea {
+        margin-bottom: 18px;
+    }
+}
+
+/* Monitores grandes */
+@media (min-width: 1400px) {
+    #usuarioSaudacao {
+        font-size: 2rem;
+    }
+    #usuarioNome {
+        font-size: 1.15rem;
+    }
+}

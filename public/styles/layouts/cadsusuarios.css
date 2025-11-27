@@ -1,0 +1,260 @@
+/* ================================ */
+/* 🌓 FUNDO ESCURO DO MODAL        */
+/* ================================ */
+
+.modal-usuarios-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-usuarios-overlay.ativo {
+  display: flex;
+}
+
+/* ================================ */
+/* 🧾 CARD CENTRAL DO MODAL        */
+/* ================================ */
+
+.modal-usuarios-card {
+  background: #fff;
+  width: 420px;
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================================ */
+/* HEADER                          */
+/* ================================ */
+
+.modal-usuarios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-usuarios-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ================================ */
+/* SUBTÍTULOS DE SEÇÕES            */
+/* ================================ */
+
+.subtitulo-modal {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* ================================ */
+/* HR SEPARADOR                     */
+/* ================================ */
+
+.modal-usuarios-card hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 12px 0;
+}
+
+/* ================================ */
+/* FORM                             */
+/* ================================ */
+
+.modal-usuarios-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-usuarios-body input,
+.modal-usuarios-body select {
+  padding: 12px;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  outline: none;
+}
+
+.modal-usuarios-body input:focus,
+.modal-usuarios-body select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+  background: #fff;
+}
+
+/* ================================ */
+/* BOTÕES ICÔNICOS                  */
+/* ================================ */
+
+.icon-btn {
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s;
+}
+
+.icon-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Azul (incluir) */
+.icon-primary {
+  background: #2563eb;
+}
+.icon-primary svg {
+  fill: #fff;
+}
+
+/* Amarelo (alterar senha) */
+.icon-warning {
+  background: #facc15;
+}
+.icon-warning svg {
+  fill: #78350f;
+}
+
+/* Vermelho (excluir) */
+.icon-danger {
+  background: #dc2626;
+}
+.icon-danger svg {
+  fill: #fff;
+}
+
+/* Cinza (fechar) */
+.icon-neutral {
+  background: #e5e7eb;
+}
+.icon-neutral svg {
+  fill: #374151;
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+.icon-btn:active {
+  transform: translateY(0);
+}
+
+/* ================================ */
+/* AÇÕES                            */
+/* ================================ */
+
+.modal-usuarios-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* =========================================================
+   📱 RESPONSIVIDADE — DO JEITO PROFISSIONAL
+   (SEM ALTERAR NADA DO DESIGN ORIGINAL)
+========================================================= */
+
+/* 👉 Smartphones até 600px */
+@media (max-width: 600px) {
+
+  .modal-usuarios-card {
+    width: 90%;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .modal-usuarios-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .subtitulo-modal {
+    font-size: 0.95rem;
+  }
+
+  .modal-usuarios-body input,
+  .modal-usuarios-body select {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .icon-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .icon-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal-usuarios-actions {
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+/* 👉 Smartphones muito pequenos até 400px */
+@media (max-width: 400px) {
+
+  .modal-usuarios-card {
+    width: 94%;
+    padding: 16px;
+  }
+
+  .modal-usuarios-header h2 {
+    font-size: 1.15rem;
+  }
+
+  .icon-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* 👉 Telas grandes acima de 1200px */
+@media (min-width: 1200px) {
+
+  .modal-usuarios-card {
+    width: 480px;
+    padding: 30px;
+  }
+
+  .modal-usuarios-header h2 {
+    font-size: 1.5rem;
+  }
+}

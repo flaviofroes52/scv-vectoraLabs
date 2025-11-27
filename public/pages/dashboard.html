@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/styles/styles.css">
+
+
+    <title>dashboard</title>
+  </head>
+
+  <body>
+    <div id="dashGeral">
+
+      <!-- ======================================================
+           🟦 HEADER — TOPO DO SISTEMA
+      ====================================================== -->
+      <header id="containerCabecalho" class="cabecalhoDash">
+
+        <!-- 🔷 Logo do sistema -->
+        <img src="/public/assets/images/logoscv.png" id="logoSCV" />
+
+        <!-- 🔷 Títulos (Dashboard + subtítulo) -->
+        <div class="titulosDash">
+          <h1 id="tituloDash">DASHBOARD</h1>
+        
+        </div>
+
+         <button id="painAdm">Painel Administrativo</button>
+      </header>
+
+      <!-- ======================================================
+           🟩 CONTEÚDO PRINCIPAL DO DASHBOARD
+      ====================================================== -->
+      <main id="containerDash" class="dashContainer">
+
+        <!-- ⭐ INFORMAÇÕES DA FROTA -->
+        <div id="infoFrotaCard">
+          <h2>Informações da Frota</h2>
+
+          <ul id="infoFrotaLista">
+
+            <!-- 🟠 Coluna: Veículo -->
+            <li class="colunaInfo">
+              <span class="labelInfo">Veículo</span>
+              <ul id="listaVeiculo" class="valoresInfo"></ul>
+            </li>
+
+            <!-- 🟠 Coluna: Ano/Fabricante -->
+            <li class="colunaInfo">
+              <span class="labelInfo">Ano/Fabricante</span>
+              <ul id="listaAnoFab" class="valoresInfo"></ul>
+            </li>
+
+            <!-- 🟠 Coluna: Cor -->
+            <li class="colunaInfo">
+              <span class="labelInfo">Cor</span>
+              <ul id="listaCor" class="valoresInfo"></ul>
+            </li>
+
+            <!-- 🟠 Coluna: Cur.Especial -->
+            <li class="colunaInfo">
+              <span class="labelInfo">Cur.Especial</span>
+              <ul id="listaCurso" class="valoresInfo"></ul>
+            </li>
+
+            <!-- 🟠 Coluna: Situação -->
+            <li class="colunaInfo">
+              <span class="labelInfo">Situação</span>
+              <ul id="listaSituacao" class="valoresInfo"></ul>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- ======================================================
+             ⭐ GRÁFICO + PAINÉIS (Livres + Em Uso)
+        ====================================================== -->
+        <div class="graficoPain">
+
+          <!-- 📈 GRÁFICO DE RESUMO -->
+          <div id="containerGrafico">
+            <h2>Resumo de Frota</h2>
+            <canvas id="graficoVeiculos" width="400" height="200"></canvas>
+          </div>
+
+          <!-- 🟢 PAINEL: Veículos Livres -->
+          <div id="painelVeiLivre">
+            <h2>Veículos Livres </h2>
+
+            <ul id="livresUso">
+
+              <!-- Coluna: Veículo -->
+              <li>
+                Veículo
+                <ul id="informacoesV" class="informacoes"></ul>
+              </li>
+
+              <!-- Coluna: Placa -->
+              <li>
+                Placa
+                <ul id="informacoesP" class="informacoes"></ul>
+              </li>
+
+            </ul>
+          </div>
+
+          <!-- 🔴 PAINEL: Veículos em Uso -->
+          <div id="painelveicUso">
+            <h2>Veículos em Uso</h2>
+            <div id="painelVeicUsoCards"></div>
+          </div>
+
+        </div>
+      </main>
+
+      <!-- ======================================================
+           🧩 SCRIPTS DO DASHBOARD
+      ====================================================== -->
+
+     <!-- 1️⃣ Biblioteca do gráfico -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- 2️⃣ main.js (renderizador do DOM) -->
+<script type="module" src="/public/scripts/modules/main.js"></script>
+
+<!-- 3️⃣ scripts.js (controlador geral) -->
+<script type="module" src="/public/scripts/scripts.js"></script>
+
+
+    </div>
+  </body>
+</html>

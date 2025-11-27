@@ -1,0 +1,227 @@
+/* ============================================
+   🔵 PAINEL — VEÍCULOS EM USO (CARD)
+   ============================================ */
+
+#painelVeicUsoCards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+
+  /* 🔥 ROLAGEM CONTROLADA */
+  max-height: 220px;     
+  overflow-y: auto;      
+  padding-right: 8px;    
+}
+
+/* Scroll elegante */
+#painelVeicUsoCards::-webkit-scrollbar {
+  width: 6px;
+}
+
+#painelVeicUsoCards::-webkit-scrollbar-thumb {
+  background: #9ba0b1;
+  border-radius: 10px;
+}
+
+#painelVeicUsoCards::-webkit-scrollbar-thumb:hover {
+  background: #6d7385;
+}
+
+/* Cada card individual */
+.card-veic-uso {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  padding: 14px 18px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===========================
+   PARTE SUPERIOR DO CARD
+=========================== */
+
+.card-uso-topo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* FOTO DO MOTORISTA NOS CARDS */
+.card-uso-foto {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Nome do motorista */
+.card-uso-motorista {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #002fff;
+}
+
+/* ===========================
+   PARTE INFERIOR DO CARD
+=========================== */
+
+.card-uso-base {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Nome do veículo */
+.card-uso-veiculo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Atividade */
+.card-uso-atividade {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.3;
+}
+
+/* ===========================
+   Barra de progresso
+=========================== */
+
+.card-uso-progresso {
+  width: 100%;
+  height: 8px;
+  background: #e7e7e7;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.card-uso-progresso-barra {
+  height: 8px;
+  background: #002fff;
+  width: 0%;
+  transition: width 0.3s linear;
+}
+
+/* ===========================
+   Alerta vermelho
+=========================== */
+
+.card-alerta {
+  animation: alertaBlink 1s infinite;
+  border: 2px solid #ff0000;
+}
+
+@keyframes alertaBlink {
+  0% { box-shadow: 0 0 4px red; }
+  50% { box-shadow: 0 0 16px red; }
+  100% { box-shadow: 0 0 4px red; }
+}
+
+/* ===========================
+   Mensagem "nenhum veículo"
+=========================== */
+
+.msg-sem-uso {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* ===========================
+   📱 RESPONSIVIDADE
+=========================== */
+
+@media (max-width: 700px) {
+  .card-veic-uso {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .card-uso-foto {
+    width: 48px;
+    height: 48px;
+  }
+
+  .card-uso-motorista,
+  .card-uso-veiculo {
+    font-size: 0.92rem;
+  }
+
+  .card-uso-atividade {
+    font-size: 0.82rem;
+  }
+
+  .card-uso-progresso {
+    height: 7px;
+  }
+
+  .card-uso-progresso-barra {
+    height: 7px;
+  }
+}
+
+/* Celulares médios */
+@media (max-width: 500px) {
+  .card-uso-topo {
+    gap: 8px;
+  }
+
+  .card-uso-foto {
+    width: 42px;
+    height: 42px;
+  }
+
+  .card-uso-motorista {
+    font-size: 0.85rem;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+  .card-veic-uso {
+    padding: 10px 12px;
+  }
+
+  .card-uso-foto {
+    width: 38px;
+    height: 38px;
+  }
+
+  .card-uso-motorista {
+    font-size: 0.78rem;
+  }
+
+  .card-uso-veiculo {
+    font-size: 0.78rem;
+  }
+
+  .card-uso-atividade {
+    font-size: 0.75rem;
+  }
+}
+
+/* Monitores grandes */
+@media (min-width: 1400px) {
+  #painelVeicUsoCards {
+    max-height: 260px;
+  }
+
+  .card-veic-uso {
+    padding: 18px 20px;
+  }
+
+  .card-uso-foto {
+    width: 75px;
+    height: 75px;
+  }
+}

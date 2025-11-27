@@ -1,0 +1,531 @@
+/* =========================================================
+   🧩 ESTRUTURA GERAL DO DASHBOARD
+========================================================= */
+#dashGeral {
+  width: 80%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #181c24, #111418); /* fundo grafite premium */
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+
+.dashContainer {
+  width: 100%;
+  padding: 35px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* =========================================================
+   🟦 HEADER — TOPO DO DASHBOARD
+========================================================= */
+#logoSCV {
+  width: 150px;
+}
+
+.titulosDash h1 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #e6ecff;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* =========================================================
+   🔷 BOTÃO — PAINEL ADMINISTRATIVO (Tema Windows 7)
+========================================================= */
+#painAdm {
+  background: linear-gradient(#ffffff, #e7eef7);
+  border: 1px solid #b7cce3;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a365d;
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.9),
+    0 2px 4px rgba(0,0,0,0.25);
+  text-shadow: 0 1px 2px rgba(255,255,255,0.9);
+  transition: 0.18s ease;
+}
+
+#painAdm:hover {
+  background: linear-gradient(#ffffff, #f3f8ff);
+  border-color: #9fb9d6;
+  transform: scale(1.03);
+}
+
+#painAdm:active {
+  transform: scale(0.96);
+  background: linear-gradient(#dfe9f7, #cbd9ec);
+  box-shadow:
+    inset 0 2px 4px rgba(0,0,0,0.3),
+    0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* =========================================================
+   ⭐ CARD — INFORMAÇÕES DA FROTA
+========================================================= */
+#infoFrotaCard {
+  width: 90%;
+  max-width: 1150px;
+  background: #ffffff;
+  padding: 32px 36px;
+  border-radius: 18px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+  border: 1px solid #1f3b82;
+  transition: 0.2s ease-in-out;
+  margin: 0 auto;
+}
+
+#infoFrotaCard h2 {
+  font-size: 1.9rem;
+  color: #003cff;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 800;
+}
+
+#infoFrotaLista {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 22px;
+}
+
+.colunaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.labelInfo {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1e2a55;
+  text-transform: uppercase;
+  border-bottom: 2px solid #dfe3ff;
+  padding-bottom: 6px;
+}
+
+.colunaInfo ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 160px;
+  overflow: hidden;
+}
+
+/* =========================================================
+   ✈️ PAINEL DE AEROPORTO — FLIP INDIVIDUAL
+========================================================= */
+.linha-flip {
+  background: #eef2ff;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #33407a;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+  height: 42px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  transform-origin: center;
+  animation: flipEntrada 0.45s ease-out;
+}
+
+@keyframes flipEntrada {
+  0% { opacity: 0; transform: rotateX(-90deg); }
+  60% { opacity: 1; transform: rotateX(25deg); }
+  100% { opacity: 1; transform: rotateX(0deg); }
+}
+
+/* =========================================================
+   📈 GRÁFICO
+========================================================= */
+.graficoPain {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  padding: 0 40px;
+}
+
+#containerGrafico {
+  width: 260px;
+  padding: 20px 18px;
+  background: #141922;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  border: 1px solid #233355;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f5f7ff;
+}
+
+#containerGrafico canvas {
+  width: 220px !important;
+  height: 220px !important;
+}
+
+/* =========================================================
+   🟢 PAINEL VEÍCULOS LIVRES
+========================================================= */
+#painelVeiLivre {
+  width: 300px;
+  height: 300px;
+  background: #141922;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  border: 1px solid #233355;
+  overflow-y: auto;
+  color: #f5f7ff;
+}
+
+#painelVeiLivre::-webkit-scrollbar { width: 6px; }
+#painelVeiLivre::-webkit-scrollbar-thumb {
+  background: #3c4d6b;
+  border-radius: 6px;
+}
+
+#livresUso {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #e5ecff;
+  font-size: 1.05rem;
+  margin: 0 auto;
+}
+
+#livresUso h2 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #a8b9d9;
+}
+
+/* =========================================================
+   🔴 PAINEL VEÍCULOS EM USO
+========================================================= */
+#painelveicUso {
+  width: 520px;
+  background: #141922;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  border: 1px solid #233355;
+  height: 360px;
+  overflow-y: auto;
+  color: #f5f7ff;
+}
+
+#painelveicUso::-webkit-scrollbar { width: 6px; }
+#painelveicUso::-webkit-scrollbar-thumb {
+  background: #3c4d6b;
+  border-radius: 6px;
+}
+
+.card-veic-uso {
+  background: #f0f6ff;
+  border: 1px solid #b7cce3;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.card-uso-topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(#ffffff, #e7eef7);
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #c8d6e7;
+  margin-bottom: 8px;
+}
+
+.card-uso-foto {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  border: 1px solid #9bb5cf;
+  object-fit: cover;
+}
+
+.card-uso-motorista,
+.card-uso-veiculo,
+.card-uso-tempo {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a365d;
+}
+
+/* =========================================================
+   ⭐ ATIVIDADE
+========================================================= */
+.card-uso-atividade-box {
+  background: #ffffff;
+  border: 1px solid #c9d8ee;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.8),
+    0 1px 4px rgba(0,0,0,0.18);
+}
+
+.card-uso-atividade {
+  font-size: 18px !important;
+  font-weight: 700;
+  color: #1a365d;
+  padding: 6px 4px;
+  margin-bottom: 8px;
+  display: block;
+  background: #ffffff;
+  border: 1px solid #c9d8ee;
+  border-radius: 8px;
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.8),
+    0 1px 4px rgba(0,0,0,0.12);
+}
+
+.card-uso-atividade-titulo {
+  font-size: 14px;
+  font-weight: 700;
+  color: #12345a;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.card-uso-atividade-texto {
+  font-size: 15px;
+  color: #1a365d;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: normal;
+}
+
+/* =========================================================
+   ⭐ BARRA DE PROGRESSO
+========================================================= */
+.card-uso-progresso {
+  width: 100%;
+  height: 18px;
+  background: #cfe8c8;
+  border-radius: 6px;
+  border: 1px solid #7ca87a;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.25);
+}
+
+.card-uso-progresso-barra {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to bottom,#b7ff96,#6bd84f,#3cab2c);
+  border-right: 1px solid rgba(255,255,255,0.4);
+  position: relative;
+  transition: width 0.4s ease-out;
+}
+
+.card-uso-progresso-barra::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,0.7),transparent);
+  opacity: 0.8;
+  animation: brilhoWin7 1.8s linear infinite;
+}
+
+@keyframes brilhoWin7 {
+  0% { left: -30%; }
+  50% { left: 70%; }
+  100% { left: 120%; }
+}
+
+/* =========================================================
+   ⭐ BOTÃO FINALIZAR
+========================================================= */
+.btn-finalizar-op {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 0;
+  background: linear-gradient(#b7ff96, #6bd84f, #3cab2c);
+  border: 1px solid #2f7b1b;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.7),
+    0 3px 6px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+.btn-finalizar-op:hover {
+  background: linear-gradient(#ff8f8f, #e24f4f, #b61212);
+  border-color: #8a0e0e;
+  box-shadow:
+    inset 0 1px 3px rgba(255,255,255,0.8),
+    0 4px 8px rgba(0,0,0,0.45);
+  transform: scale(1.03);
+}
+
+.btn-finalizar-op:active {
+  transform: scale(0.97);
+  box-shadow:
+    inset 0 2px 4px rgba(0,0,0,0.35),
+    0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* =========================================================
+   🔥 ALERTA VERMELHO
+========================================================= */
+.card-veic-uso.card-alerta {
+  position: relative;
+  z-index: 1;
+}
+
+.card-veic-uso.card-alerta::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 12px;
+  pointer-events: none;
+  box-shadow:
+    0 0 12px 4px rgba(255, 0, 0, 0.9);
+  animation: alertaRespirar 1.6s ease-in-out infinite;
+}
+
+@keyframes alertaRespirar {
+  0% {
+    box-shadow:
+      0 0 10px 2px rgba(255, 0, 0, 0.6),
+      0 0 20px 6px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 14px 5px rgba(255, 0, 0, 1),
+      0 0 26px 10px rgba(255, 0, 0, 0.55);
+  }
+  100% {
+    box-shadow:
+      0 0 10px 2px rgba(255, 0, 0, 0.6),
+      0 0 20px 6px rgba(255, 0, 0, 0.3);
+  }
+}
+
+/* =========================================================
+   ✈️ EFEITO AEROPORTO — ATRASO
+========================================================= */
+.colunaInfo:nth-child(1) .linha-flip { animation-delay: 0ms; }
+.colunaInfo:nth-child(2) .linha-flip { animation-delay: 120ms; }
+.colunaInfo:nth-child(3) .linha-flip { animation-delay: 240ms; }
+.colunaInfo:nth-child(4) .linha-flip { animation-delay: 360ms; }
+.colunaInfo:nth-child(5) .linha-flip { animation-delay: 480ms; }
+
+/* =========================================================
+   📱 RESPONSIVIDADE AJUSTADA — NÃO ALTERA NADA ORIGINAL
+========================================================= */
+
+/* 🟦 TELAS MUITO PEQUENAS (até 600px) */
+@media (max-width: 600px) {
+
+  #dashGeral {
+    padding-top: 80px !important;
+    width: 95% !important;
+  }
+
+  .titulosDash h1 {
+    font-size: 1.5rem !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+  }
+
+  .dashContainer {
+    padding: 20px 15px !important;
+  }
+
+  #infoFrotaCard {
+    width: 100% !important;
+    padding: 20px 18px !important;
+  }
+
+  #infoFrotaLista {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+
+  .graficoPain {
+    flex-direction: column !important;
+    padding: 0 !important;
+  }
+
+  #containerGrafico,
+  #painelVeiLivre,
+  #painelveicUso {
+    width: 100% !important;
+  }
+
+  #painelVeiLivre,
+  #painelveicUso {
+    height: auto !important;
+    max-height: 330px !important;
+  }
+}
+
+/* 🟦 TELAS MÉDIAS (600px — 1024px) */
+@media (max-width: 1024px) {
+
+  #dashGeral {
+    width: 95% !important;
+    padding-top: 50px !important;
+  }
+
+  #infoFrotaLista {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .graficoPain {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #containerGrafico,
+  #painelVeiLivre,
+  #painelveicUso {
+    width: 48% !important;
+  }
+}
+
+/* 🟦 TELAS GRANDES (Full HD pra cima) */
+@media (min-width: 1600px) {
+
+  #dashGeral {
+    width: 70% !important;
+  }
+
+  .graficoPain {
+    gap: 40px !important;
+  }
+}

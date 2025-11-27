@@ -1,0 +1,157 @@
+/* =========================================================
+   🟦 LOGIN — FORMULÁRIO CENTRALIZADO
+========================================================= */
+
+#containerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 450px;
+  max-width: 92%;
+  padding: 60px 70px;
+
+  background-color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 999;
+}
+
+/* =========================================================
+   📝 TÍTULO
+========================================================= */
+
+#containerForm h1 {
+  text-align: center;
+  color: #002fff;
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin-bottom: 28px;
+}
+
+/* =========================================================
+   📌 FORMULÁRIO DE LOGIN
+========================================================= */
+
+#loginForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#loginForm label {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+#loginForm input {
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s;
+}
+
+#loginForm input:focus {
+  border-color: #002fff;
+  box-shadow: 0 0 6px rgba(0, 90, 255, 0.4);
+}
+
+/* BOTÃO AJUSTADO PARA O NOVO TAMANHO DO MODAL */
+#loginForm button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  background-color: #002fff;
+  color: white;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#loginForm button:hover {
+  background-color: #001fb3;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   📱 RESPONSIVO
+========================================================= */
+@media (max-width: 600px) {
+  #containerForm {
+    width: 90%;
+    padding: 35px 28px;
+  }
+
+  #containerForm h1 {
+    font-size: 1.6rem;
+  }
+
+  #loginForm input {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  #loginForm button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+}
+
+/* =========================================================
+   📱 RESPONSIVO EXTRA — TELAS MUITO PEQUENAS
+========================================================= */
+@media (max-width: 420px) {
+
+  #containerForm {
+    padding: 26px 20px;
+  }
+
+  #containerForm h1 {
+    font-size: 1.4rem;
+  }
+
+  #loginForm input {
+    font-size: 0.88rem;
+    padding: 10px;
+  }
+
+  #loginForm button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 330px) {
+
+  #containerForm {
+    padding: 20px 14px;
+  }
+
+  #containerForm h1 {
+    font-size: 1.25rem;
+  }
+
+  #loginForm input {
+    font-size: 0.82rem;
+    padding: 8px;
+  }
+
+  #loginForm button {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,179 @@
+/* ======================================================
+   🎨 Painel de Cadastros — SCV
+   Compatível 100% com o HTML fornecido
+====================================================== */
+
+/* Corpo principal */
+.painelcads {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Textura */
+.painelcads::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 2px,
+    transparent 2px,
+    transparent 6px
+  );
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.painelcads h1 {
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+/* ================================
+   🧩 Grid do Mosaico
+================================ */
+.cadmosaico {
+  display: grid;
+  grid-template-columns: repeat(2, 240px);
+  gap: 40px;
+  z-index: 10;
+}
+
+/* Botões */
+.botao {
+  height: 150px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding-top: 15px;
+  transition: 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.botao svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  fill: white;
+}
+
+.botao:hover {
+  transform: scale(1.07);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.35);
+}
+
+/* ================================
+   🎨 Cores individuais dos botões
+================================ */
+.motoristas {
+  background-color: #ef4444; /* vermelho */
+}
+
+.veiculos {
+  background-color: #2563eb; /* azul */
+}
+
+.usuarios {
+  background-color: #16a34a; /* verde */
+}
+
+.sair {
+  background-color: #f59e0b; /* amarelo */
+}
+
+/* ======================================================
+   📱 RESPONSIVIDADE OFICIAL
+   Mantendo seu layout EXATO
+====================================================== */
+
+/* Tablets e celulares */
+@media (max-width: 900px) {
+  .cadmosaico {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .botao {
+    width: 40vw;
+    height: 140px;
+  }
+
+  .painelcads h1 {
+    font-size: 2.2em;
+  }
+}
+
+/* Celulares médios */
+@media (max-width: 700px) {
+  .cadmosaico {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .botao {
+    width: 75vw;
+    height: 130px;
+  }
+
+  .painelcads h1 {
+    font-size: 2em;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 450px) {
+  .botao {
+    width: 82vw;
+    height: 120px;
+    font-size: 1.15em;
+  }
+
+  .painelcads h1 {
+    font-size: 1.8em;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+  .botao {
+    width: 88vw;
+    height: 115px;
+    font-size: 1.05em;
+  }
+
+  .painelcads h1 {
+    font-size: 1.6em;
+  }
+}
+
+/* Monitores grandes */
+@media (min-width: 1400px) {
+  .cadmosaico {
+    grid-template-columns: repeat(2, 260px);
+  }
+
+  .botao {
+    height: 160px;
+    font-size: 1.4em;
+  }
+}

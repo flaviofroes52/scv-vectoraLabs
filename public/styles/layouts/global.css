@@ -1,0 +1,99 @@
+/* =========================================================
+   🔄 RESET GLOBAL
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   🔤 FONTES + BACKGROUND GLOBAL
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: #f4f6fc;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =========================================================
+   📝 TIPOGRAFIA GLOBAL
+========================================================= */
+h1, h2, h3, h4, p, span, li, label {
+    font-family: "Poppins", sans-serif;
+    list-style: none;
+}
+
+/* =========================================================
+   🔘 BOTÕES PADRÃO
+========================================================= */
+button {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+}
+
+/* =========================================================
+   📝 INPUTS GLOBAIS
+========================================================= */
+input, select, textarea {
+    font-family: "Poppins", sans-serif;
+    border: none;
+    outline: none;
+}
+
+/* =========================================================
+   🔗 LINKS
+========================================================= */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================================
+   🧭 SCROLL SUAVE
+========================================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================================
+   📦 CONTAINER PRINCIPAL (para centralizar tudo)
+========================================================= */
+#dashGeral {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================================
+   🟦 LAYOUT GLOBAL COM 100VH (SEGURO)
+   - Mantém todas as páginas com altura completa
+   - Não interfere no dashboard
+   - Não briga com layouts existentes
+========================================================= */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* garante que a página ocupe a tela inteira */
+}
+
+/* Áreas principais empurram o footer */
+main,
+section,
+#pagina-login,
+#dashGeral {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+   🟦 FOOTER SEMPRE NO FINAL
+========================================================= */
+#footerSistema {
+    margin-top: auto; /* empurra o footer pro rodapé */
+}

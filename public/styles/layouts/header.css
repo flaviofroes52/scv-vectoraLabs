@@ -1,0 +1,211 @@
+/* =========================================================
+   🟦 CABEÇALHO SCV — PADRÃO PARA LOGIN E DASHBOARD
+========================================================= */
+
+.cabecalho,
+.cabecalhoDash {
+    width: 100%;
+    height: 130px;              /* 🔥 aumentei pra comportar a logo maior */
+    background: #003cff;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    position: relative;         /* 🔥 necessário para logos absolutas */
+}
+
+/* Logo SCV – inteiramente compatível */
+#logoSCV {
+    height: 180px;
+    object-fit: contain;
+}
+
+/* =========================================================
+   🟦 Logo VetoraLabs — CRESCENDO DE VERDADE
+========================================================= */
+#logoVetoraLabs {
+    height: 150px;              /* 🔥 tamanho original */
+    width: auto;
+    object-fit: contain;
+
+    position: absolute;
+    right: 120px;
+    top: 15px;                  
+    z-index: 10;
+
+    padding: 6px;
+    border-radius: 8px;
+}
+
+/* =========================================================
+   Títulos centralizados
+========================================================= */
+.titulos,
+.titulosDash {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#tituloDash {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: -10px;
+}
+
+.subtituloSistema {
+    font-size: 1.8rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* =========================================================
+   📱 RESPONSIVIDADE
+========================================================= */
+@media (max-width: 1100px) {
+
+    #logoVetoraLabs {
+        right: 60px;
+    }
+
+    .cabecalho,
+    .cabecalhoDash {
+        padding: 50px;
+    }
+
+    #logoSCV {
+        height: 150px;
+    }
+
+    #tituloDash {
+        font-size: 3.2rem;
+    }
+
+    .subtituloSistema {
+        font-size: 1.45rem;
+    }
+}
+
+@media (max-width: 900px) {
+
+    #logoVetoraLabs {
+        height: 110px;
+        right: 40px;
+        top: 18px;
+    }
+
+    #logoSCV {
+        height: 130px;
+    }
+
+    .cabecalho,
+    .cabecalhoDash {
+        padding: 40px;
+        height: 150px;
+    }
+
+    #tituloDash {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .cabecalho,
+    .cabecalhoDash {
+        height: 140px;
+        padding: 25px;
+    }
+
+    #logoVetoraLabs {
+        height: 60px;
+        right: 20px;
+        top: 10px;
+    }
+
+    #logoSCV {
+        height: 95px;
+    }
+
+    .titulos {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+    }
+
+    #tituloDash {
+        font-size: 2.3rem;
+    }
+
+    .subtituloSistema {
+        font-size: 1.1rem;
+    }
+}
+
+/* =========================================================
+   📱 TELAS MENORES (≤ 500px)
+========================================================= */
+@media (max-width: 500px) {
+
+    .cabecalho,
+    .cabecalhoDash {
+        height: 120px;
+        padding: 18px;
+    }
+
+    #logoVetoraLabs {
+        height: 50px;
+        right: 15px;
+        top: 12px;
+    }
+
+    #logoSCV {
+        height: 80px;
+    }
+
+    #tituloDash {
+        font-size: 1.9rem;
+    }
+
+    .subtituloSistema {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================================================
+   📱 MICRO-TELAS (≤ 380px)
+========================================================= */
+@media (max-width: 380px) {
+
+    .cabecalho,
+    .cabecalhoDash {
+        height: 110px;
+        padding: 14px;
+    }
+
+    #logoVetoraLabs {
+        height: 42px;
+        right: 10px;
+        top: 10px;
+    }
+
+    #logoSCV {
+        height: 70px;
+    }
+
+    #tituloDash {
+        font-size: 1.6rem;
+    }
+
+    .subtituloSistema {
+        font-size: 0.85rem;
+    }
+}
