@@ -56,7 +56,7 @@ const mosaico = {
     if (btnCadastros) {
       btnCadastros.addEventListener("click", () => {
         this.esconderMosaico(); // 👈 agora esconde
-        window.location.href = "public/pages/painelcadastros.html";
+        window.location.href = "../pages/painelcadastros.html";
       });
     }
 
