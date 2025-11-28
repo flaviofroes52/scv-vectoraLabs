@@ -143,10 +143,9 @@ const mosaico = {
           window.getComputedStyle(btnFinalizar).display;
       }
 
-    btnFinalizar.addEventListener("click", () => {
-  window.location.href = "../index.html";
-});
-
+      btnFinalizar.addEventListener("click", () => {
+        window.location.href = "./public/indse; // volta ao login
+      });
     }
   }
 };
