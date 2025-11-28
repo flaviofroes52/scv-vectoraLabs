@@ -2,7 +2,7 @@
 // 🌐 api.js — Comunicação com o backend SCV (NOVA ROUPAGEM)
 // =======================================================
 
-const API_BASE = "https://scv-api-vectoralabs.onrender.com/api";
+const API_BASE = "https://scv-api-vectoralabs.onrender.com";
 
 // =======================================================
 // 🚀 Objeto principal da API
