@@ -1,0 +1,15 @@
+@import url("public/styles/layouts/global.css");
+@import url("public/styles/layouts/login.css");
+@import url("public/styles/layouts/saudacao.css");
+@import url("/public/styles/layouts/header.css");
+@import url("/public/styles/layouts/footer.css");
+
+/* pages */
+
+@import url("/public/styles/layouts/dashboard.css");
+@import url("/public/styles/layouts/menu.css");
+@import url("/public/styles/layouts/painelcads.css");
+@import url("/public/styles/layouts/cadastroMotorista.css");
+@import url("/public/styles/layouts/cadsveiculos.css");
+@import url("/public/styles/layouts/cadsusuarios.css");
+@import url("/public/styles/layouts/operacoes.css");
