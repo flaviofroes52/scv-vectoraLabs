@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- 🔵 CSS CORRETO -->
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="">
 
     <title>SCV - Dashboard</title>
   </head>
@@ -13,18 +11,25 @@
   <body>
     <div id="loginGeral">
 
+      <!-- ======================================================
+           🟦 HEADER
+      ====================================================== -->
       <header id="containerSuperior" class="cabecalho">
 
-        <!-- 🔵 IMAGENS CORRETAS -->
-        <img src="assets/images/logoscv.png" id="logoSCV" />
-        <img src="assets/images/vetora_log.png" id="logoVetoraLabs" />
+        <img src="/public/assets/images/logoscv.png" id="logoSCV" />
+        <img src="/public/assets/images/vetora_log.png"  id="logoVetoraLabs" />
 
         <div class="titulos">
-          <span class="subtituloSistema">Sistema Checklist de Veículos</span>
+                  <span class="subtituloSistema">Sistema Checklist de Veículos</span>
         </div>
       </header>
 
+
+      <!-- ======================================================
+           🟩 MAIN — LOGIN
+      ====================================================== -->
       <main id="containerMeio" class="containerMain">
+
         <div class="containerForm" id="containerForm">
           <h1>Login</h1>
 
@@ -38,35 +43,42 @@
             <button type="submit">Entrar</button>
           </form>
         </div>
-      </main>
 
+      </main>
       <footer id="footerSistema" class="footerSistema">
+
         <div class="footerConteudo">
 
-          <!-- 🔵 IMAGEM CORRETA -->
+          <!-- Logo VetoraLabs -->
           <img 
-            src="assets/images/vetora_log.png" 
+            src="/public/assets/images/vetora_log.png" 
             alt="Logo VetoraLabs" 
             class="logoFooter"
           />
 
+          <!-- Slogan -->
           <span class="footerSlogan">
             Somos a solução para o seu negócio
           </span>
 
+          <!-- Copyright -->
           <span class="footerCopy">
             © <span id="anoFooter"></span> VetoraLabs
           </span>
 
         </div>
+
       </footer>
+      
 
       <!-- ======================================================
-           🔵 SCRIPTS CORRETOS
+           🟦 SCRIPTS
       ====================================================== -->
 
-      <script type="module" src="scripts/modules/main.js"></script>
-      <script type="module" src="scripts/scripts.js"></script>
+      <script type="module" src="./public/scripts/modules/main.js"></script>
+      <script type="module" src="./public/scripts/scripts.js"></script>
+
+     
 
     </div>
   </body>
